@@ -18,8 +18,8 @@ module Canal
       end
     end
 
-    def to_s
-      method_missing(:to_s)
+    def to_s(*args)
+      method_missing(:to_s, *args)
     end
 
     def to_proc
