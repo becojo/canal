@@ -1,8 +1,10 @@
 # Canal
 
-Canal is a Ruby library that allows the transformation of chained method calls into point-free expressions.
+Partial application of a chain of methods.
 
 ## Example
+
+Canal can allow point-free expressions. For example, when using `map`:
 
 ```ruby
 %w{10010101 11100 10110}.map(&canal.to_i(2).to_s.reverse.to_i.to_s(2))
