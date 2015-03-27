@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Canal::VERSION
   spec.authors       = ["Benoit Cote-Jodoin"]
   spec.email         = ["benoit@bcj.io"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = %q{Canal is a Ruby library that allows the transformation of chained method calls into point-free expressions.}
+  # spec.description   = %q{TODO: Write a longer description. Optional.}
   spec.homepage      = ""
   spec.license       = "MIT"
 
