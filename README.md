@@ -1,6 +1,6 @@
 # Canal
 
-Partial application of a chain of methods.
+Build functions out of methods.
 
 ## Examples
 
