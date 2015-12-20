@@ -18,12 +18,14 @@ module Canal
       end
     end
 
-    def to_s(*args)
-      method_missing(:to_s, *args)
-    end
-
     def to_proc
       ->(object) { call(object) }
+    end
+
+    %w{ to_s ! == <=> != === =~ !~ }.each do |method|
+      define_method(method) do |*args|
+        method_missing(method, *args)
+      end
     end
   end
 end
