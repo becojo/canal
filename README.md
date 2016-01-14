@@ -51,6 +51,19 @@ Multiply list of number by 2.
 => [0, 2, 4, 6, 8, 10]
 ```
 
+### Immutability and composition
+
+Canals are immutable allowing them to be easily composed.
+
+```ruby
+add1 = canal + 1
+add1times2 = add1 * 2
+[1,2,3].map(&add1times2)
+=> [4,6,8]
+[1,2,3].map(&add1)
+=> [2,3,4]
+```
+
 ## Installation
 
 Add this line to your application's Gemfile:
