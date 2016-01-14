@@ -7,8 +7,11 @@ module Canal
     end
 
     def method_missing(name, *args, &block)
-      @functions << [name, args, block]
-      self
+      functions = @functions
+      Canal::Context.new.instance_eval {
+        @functions = functions + [[name, args, block]]
+        self
+      }
     end
 
     def call(object)
