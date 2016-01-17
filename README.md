@@ -58,10 +58,10 @@ Canals are immutable allowing them to be easily composed.
 ```ruby
 add1 = canal + 1
 add1times2 = add1 * 2
-[1,2,3].map(&add1times2)
-=> [4,6,8]
-[1,2,3].map(&add1)
-=> [2,3,4]
+add1times2.(5)
+=> 12
+add1.(5)
+=> 6
 ```
 
 ## Installation
