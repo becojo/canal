@@ -1,5 +1,7 @@
 # Canal
 
+[![Gem Version](https://badge.fury.io/rb/canal.svg)](https://badge.fury.io/rb/canal)
+
 Build functions out of methods.
 
 ## Examples
