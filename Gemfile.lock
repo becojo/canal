@@ -1,0 +1,20 @@
+PATH
+  remote: .
+  specs:
+    canal (0.0.4)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    rake (13.0.6)
+
+PLATFORMS
+  x86_64-linux
+
+DEPENDENCIES
+  bundler (~> 2.2)
+  canal!
+  rake
+
+BUNDLED WITH
+   2.2.32
