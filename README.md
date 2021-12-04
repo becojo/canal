@@ -2,43 +2,36 @@
 
 [![Gem Version](https://badge.fury.io/rb/canal.svg)](https://badge.fury.io/rb/canal)
 
-Build functions out of methods.
+Canal is an utility that builds callable objects out of a chain of method calls. It can be used to write simpler and shorter code that avoids using blocks or lambdas.
 
-## Examples
+## Usage
 
-Canal can allow point-free expressions. For example, when using `map`:
-
-```ruby
-%w{10010101 11100 10110}.map(&canal.to_i(2).to_s.reverse.to_i.to_s(2))
-```
-
-is equivalent to
+Include the `canal` gem and expose the `canal` method:
 
 ```ruby
-%w{10010101 11100 10110}.map do |x|
-  x.to_i(2).to_s.reverse.to_i.to_s(2)
-end
+require 'canal'
 ```
 
-### Identity
-
-An empty canal is the identity function.
+### Using canals instead of lambdas
 
 ```ruby
-[1, 2, 3].map(&canal)
-=> [1, 2, 3]
+lambda { |x| x.to_s(2) }
+canal.to_s(2)
 ```
 
-Exemple: Count truthy values.
+### Using canals instead of blocks
 
 ```ruby
-[true, false, nil, "hey", 4].count(&canal)
-=> 3
+[1, 2, 3].map { |value| value + 1 }
+[1, 2, 3].map(&canal + 1)
 ```
 
-### Operators
+```ruby
+[1, 2, 3].select { |value| value > 1 }
+[1, 2, 3].select(&canal > 1)
+```
 
-Fetch key in list of hash.
+### Using hashes
 
 ```ruby
 people = [{ name: "Alice" }, { name: "Bob" }]
@@ -46,24 +39,14 @@ people.map(&canal[:name])
 => ["Alice", "Bob"]
 ```
 
-Multiply list of number by 2.
+### Nesting canals
 
 ```ruby
-(0..5).map(&canal * 2)
-=> [0, 2, 4, 6, 8, 10]
-```
-
-### Immutability and composition
-
-Canals are immutable allowing them to be easily composed.
-
-```ruby
-add1 = canal + 1
-add1times2 = add1 * 2
-add1times2.(5)
-=> 12
-add1.(5)
-=> 6
+# Format a 2D array into a grid
+rows = [[1, 2], [31, 4]]
+puts rows.map(&canal.map(&canal.to_s.ljust(3, ' ')).join).join("\n")
+1  2
+31 4
 ```
 
 ## Installation
