@@ -2,16 +2,12 @@ require "canal/version"
 
 module Canal
   class Context
-    def initialize
-      @functions = []
+    def initialize(functions=[])
+      @functions = functions.freeze
     end
 
     def method_missing(name, *args, &block)
-      functions = @functions
-      Canal::Context.new.instance_eval {
-        @functions = functions + [[name, args, block]]
-        self
-      }
+      Canal::Context.new(@functions + [[name, args, block]])
     end
 
     def call(object)
