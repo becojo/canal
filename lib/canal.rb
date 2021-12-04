@@ -6,14 +6,14 @@ module Canal
       @functions = functions.freeze
     end
 
-    def method_missing(name, *args, &block)
-      Canal::Context.new(@functions + [[name, args, block]])
+    def method_missing(name, *args, **kwargs, &block)
+      Canal::Context.new(@functions + [[name, args, kwargs, block]])
     end
 
     def call(object)
       @functions.reduce(object) do |object, function|
-        name, args, block = function
-        object.send(name, *args, &block)
+        name, args, kwargs, block = function
+        object.send(name, *args, **kwargs, &block)
       end
     end
 

@@ -34,4 +34,22 @@ class CanalTest < Minitest::Test
     assert_equal(456, g.({ foo: { bar: 456 } }))
     refute_equal(f.object_id, g.object_id)
   end
+
+  def test_kwargs
+    f = canal.foo(bar: 123)
+    cls = Class.new do
+      def foo(bar:)
+        bar
+      end
+    end
+
+    assert_equal(123, f.(cls.new))
+  end
+
+  def test_block
+    f = canal.map(&canal + 1) + [:foo]
+    value = [0, 1, 2]
+
+    assert_equal([1,2,3,:foo], f.(value))
+  end
 end
