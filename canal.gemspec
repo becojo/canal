@@ -6,11 +6,11 @@ require 'canal/version'
 Gem::Specification.new do |spec|
   spec.name          = "canal"
   spec.version       = Canal::VERSION
-  spec.authors       = ["Benoit Cote-Jodoin"]
+  spec.authors       = ["becojo"]
   spec.email         = ["benoit@bcj.io"]
-  spec.summary       = %q{Partial application of a chain of methods.}
+  spec.summary       = %q{Utility that builds callable objects out of a chain of method calls}
   # spec.description   = %q{TODO: Write a longer description. Optional.}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/Becojo/canal"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
