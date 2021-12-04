@@ -6,6 +6,7 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
+    minitest (5.14.4)
     rake (13.0.6)
 
 PLATFORMS
@@ -14,6 +15,7 @@ PLATFORMS
 DEPENDENCIES
   bundler (~> 2.2)
   canal!
+  minitest
   rake
 
 BUNDLED WITH
