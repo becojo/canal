@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["benoit@bcj.io"]
   spec.summary       = %q{Utility that builds callable objects out of a chain of method calls}
   # spec.description   = %q{TODO: Write a longer description. Optional.}
-  spec.homepage      = "https://github.com/Becojo/canal"
+  spec.homepage      = "https://github.com/becojo/canal"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)

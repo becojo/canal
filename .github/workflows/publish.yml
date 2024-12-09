@@ -1,0 +1,20 @@
+on:
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+    - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+      with:
+        persist-credentials: false
+    - uses: ruby/setup-ruby@2a18b06812b0e15bb916e1df298d3e740422c47e # v1
+      with:
+        ruby-version: '3.3'
+        bundler-cache: false
+    - uses: rubygems/release-gem@a25424ba2ba8b387abc8ef40807c2c85b96cbe32 # v1
