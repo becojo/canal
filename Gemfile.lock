@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    canal (0.0.4)
+    canal (0.0.5)
 
 GEM
   remote: https://rubygems.org/
@@ -10,6 +10,7 @@ GEM
     rake (13.0.6)
 
 PLATFORMS
+  arm64-darwin-24
   x86_64-linux
 
 DEPENDENCIES
@@ -19,4 +20,4 @@ DEPENDENCIES
   rake
 
 BUNDLED WITH
-   2.2.32
+   2.5.23
