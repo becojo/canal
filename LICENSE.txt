@@ -1,4 +1,4 @@
-Copyright (c) 2015 Benoit Cote-Jodoin
+Copyright (c) 2024 Benoit Cote-Jodoin
 
 MIT License
 
